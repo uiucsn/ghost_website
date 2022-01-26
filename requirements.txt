@@ -1,0 +1,9 @@
+aiohttp
+aiohttp_cors
+Pillow
+pyyaml
+coloredlogs
+asyncio
+numpy
+tornado
+requests
