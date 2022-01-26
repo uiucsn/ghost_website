@@ -1,0 +1,32 @@
+classes:
+- Delete: 0
+- Ia: 1
+- Ib/c: 2
+- II: 3
+- I: 4
+- IIP: 5
+- IIb: 6
+- IIn: 7
+- SLSN: 8
+- Other/Unknown: 9
+client:
+  host: http://localhost
+  port: 8000
+display:
+  dataname: SN_stamps
+  deltaZoom: 3
+  minXrange: 0
+  minYrange: 0
+  nimages: 16228
+  path: /Users/alexgagliano/Documents/Research/GHOST_Website/searchBarVersion/cutouts-explorer_plotly/python_server/static/pngs
+  tileSize: 120
+  xdim: 140
+  ydim: 116
+operation:
+  updates: false
+server:
+  host: http://localhost
+  port: 8888
+  rootUrl: /cexp
+  ssl: false
+  sslName: test

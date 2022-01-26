@@ -1,0 +1,39 @@
+#### DISPLAY
+display:
+  dataname: 'SN_stamps' #Name for the sqlite DB and config file
+  path: '/Users/alexgagliano/Documents/Research/GHOST_Website/searchBarVersion/cutouts-explorer_plotly/python_server/static/pngs'
+  nimages: 16228
+  xdim: 140 #:15002, 'nx':130, 'ny':116
+  ydim: 116
+  tileSize: 120 #Size of the tile for which images are resized at max zoom level
+  minXrange: 0
+  minYrange: 0
+  deltaZoom: 3
+#### SERVER
+server:
+  ssl: false #use ssl, need to have certificates
+  sslName: test #prefix of .crt and .key files inside ssl/ folder e.g., ssl/{sslName.key}
+  host: 'http://localhost' #if using ssl, change to https
+  port: 8888
+  rootUrl: '/cexp' #root url for server, e.g. request are made to /cexp/, if None use "/"
+  #workers: None # None will default to the workers in the machine
+#### CLIENT
+client:
+  host: 'http://localhost'
+  port: 8000
+#### OPERATIONS options
+operation:
+  updates: false #allows to update and/or remove classes to images, false and classes are fixed.
+#### CLASSES
+#### classes, use any classes from 0 to 9, class 0 is for hidden! class -1 is no class
+classes:
+     - Delete: 0
+     - Ia: 1
+     - Ib/c: 2
+     - II: 3
+     - I: 4
+     - IIP: 5
+     - IIb: 6
+     - IIn: 7
+     - SLSN: 8
+     - Other/Unknown: 9
