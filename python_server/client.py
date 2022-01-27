@@ -51,8 +51,8 @@ class MainHandler(BaseHandler):
             c.execute('SELECT nimages, nx, ny, updates from CONFIG')
             nimages, NX, NY, updates = c.fetchone()
             conn.close()
-        config["serverPort"] = config["server"]["port"]
-        config["serverHost"] = config["server"]["host"]
+        config["serverPort"] = config["server"]["externalPort"]
+        config["serverHost"] = config["server"]["externalHost"]
         config["rootUrl"] = config["server"]["rootUrl"]
         config["xdim"] = NX
         config["ydim"] = NY
@@ -80,9 +80,12 @@ class MainHandler(BaseHandler):
 
 
 def make_app():
+    images, total_images, nimages, dbname, NX, NY, NTILES, MAXZOOM, TILESIZE, config = read_config(
+        "config.yaml", no_read_images=True
+    )
     settings = {"template_path": "templates/", "static_path": "static/", "debug": True, "cookie_secret": "ABCDEF"}
     return tornado.web.Application(
-        [(r"/", MainHandler)], **settings
+        [(f'''{config["client"]["rootUrl"]}''', MainHandler)], **settings
     )
 
 
