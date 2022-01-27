@@ -16,6 +16,7 @@ RUN mkdir /home/explorer/server
 WORKDIR /home/explorer/server
 COPY --chown=explorer:explorer python_server/static static
 COPY --chown=explorer:explorer python_server/templates templates
+COPY --chown=explorer:explorer python_server/dbfiles dbfiles
 COPY --chown=explorer:explorer python_server/server.py python_server/client.py ./
 
 CMD [ "python3", "server.py" ]
